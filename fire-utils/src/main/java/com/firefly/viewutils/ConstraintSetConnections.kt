@@ -143,6 +143,25 @@ fun ConstraintSetConnection.setVisibility(visibility: Int): ConstraintSetConnect
     return this
 }
 
+fun ConstraintSetConnection.applyAspectRatio(aspectRatio: String): ConstraintSetConnection {
+    this.constraintSet.setDimensionRatio(this.viewId, aspectRatio)
+    return this
+}
+
+fun ConstraintSetConnection.setHeight(height: Int): ConstraintSetConnection {
+    this.constraintSet.constrainHeight(this.viewId, height)
+    return this
+}
+
+fun ConstraintSetConnection.setWidth(width: Int): ConstraintSetConnection {
+    this.constraintSet.constrainWidth(this.viewId, width)
+    return this
+}
+
+fun ConstraintSetConnection.setSize(width: Int, height: Int): ConstraintSetConnection {
+    return this.setHeight(height).setWidth(width)
+}
+
 fun ConstraintSetConnection.getConstraintSet(): ConstraintSet {
     return this.constraintSet
 }
